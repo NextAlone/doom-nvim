@@ -13,7 +13,13 @@
 --     require("surround").setup({mappings_style = "sandwich"})
 --   end
 -- })
-
+doom.use_package("github/copilot.vim", "jspringyc/vim-word", "rmehri01/onenord.nvim", "lervag/vimtex",
+  "dhruvasagar/vim-table-mode", "voldikss/vim-translator")
+doom.use_package("rafcamlet/nvim-luapad")
+doom.use_package({
+  "ellisonleao/glow.nvim",
+  branch = "main",
+})
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
@@ -27,13 +33,36 @@
 --     end, name = ""}
 --   }}
 -- })
-
+doom.use_keybind({
+  mode = "i",
+  "cc",
+  'copilot#Accept("<CR>")',
+  options = { expr = true, silent = true },
+}, {
+  "qq",
+  function() vim.cmd("q!") end,
+}, {
+  "wq",
+  function()
+    vim.cmd("wq")
+  end,
+}, {
+  "ww",
+  function()
+    vim.cmd("w")
+  end,
+}
+)
 -- ADDING A COMMAND
 --
 -- doom.use_cmd({
 --   {"CustomCommand1", function() print("Trigger my custom command 1") end},
 --   {"CustomCommand2", function() print("Trigger my custom command 2") end}
 -- })
+doom.use_cmd({
+  { "W", function() vim.cmd("SudaWrite") end },
+  { "Wq", function() vim.cmd("SudaWrite") vim.cmd("q!") end },
+})
 
 -- ADDING AN AUTOCOMMAND
 --
@@ -41,4 +70,29 @@
 --   { "FileType", "javascript", function() print('This is a javascript file') end }
 -- })
 
+doom.indent = 2
+doom.core.treesitter.settings.show_compiler_warning_message = false
+doom.core.reloader.settings.reload_on_save = false
+-- vim.g.copilot_no_tab_map = true
+vim.opt.colorcolumn = "0"
+
+vim.g.tex_flavor = "xelatex"
+vim.g.vimtex_quickfix_mode = 0
+vim.g.vimtex_view_general_viewer = 'zathura'
+vim.g.vimtex_view_method = 'zathura'
+
+vim.g.loaded_gzip = 0
+vim.g.loaded_zip = 0
+vim.g.loaded_zipPlugin = 0
+vim.g.loaded_tar = 0
+vim.g.loaded_tarPlugin = 0
+
+-- doom.indent = 2 -- Sets vim.opt.shiftwith, vim.opt.softtabstop, vim.opt.tabstop to 2
+doom.colorscheme = "onenord" -- Select a colorscheme
+doom.disable_ex = true -- Disable Ex mode
+doom.disable_macros = true -- Disable macros
+doom.use_floating_win_packer = true -- Use floating window packer
+doom.preserve_edit_pos = true -- Preserve the cursor position when switching buffers
+doom.auto_comment = true -- Enable auto-commenting
+doom.undo_dir = "/home/nextalone/.cache/nvim/undo" -- Set the undo directory
 -- vim: sw=2 sts=2 ts=2 expandtab
