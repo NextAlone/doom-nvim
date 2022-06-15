@@ -74,6 +74,7 @@ doom.indent = 2
 doom.core.treesitter.settings.show_compiler_warning_message = false
 doom.core.reloader.settings.reload_on_save = false
 -- vim.g.copilot_no_tab_map = true
+vim.g.copilot_no_tab_map = true
 vim.opt.colorcolumn = "0"
 
 vim.g.tex_flavor = "xelatex"
@@ -87,7 +88,7 @@ vim.g.loaded_zipPlugin = 0
 vim.g.loaded_tar = 0
 vim.g.loaded_tarPlugin = 0
 
--- doom.indent = 2 -- Sets vim.opt.shiftwith, vim.opt.softtabstop, vim.opt.tabstop to 2
+doom.indent = 2 -- Sets vim.opt.shiftwith, vim.opt.softtabstop, vim.opt.tabstop to 2
 doom.colorscheme = "onenord" -- Select a colorscheme
 doom.disable_ex = true -- Disable Ex mode
 doom.disable_macros = true -- Disable macros
