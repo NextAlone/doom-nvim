@@ -8,11 +8,11 @@
 -- Disable vim builtins for faster startup time
 local g = vim.g
 
-g.loaded_gzip = 1
-g.loaded_zip = 1
-g.loaded_zipPlugin = 1
-g.loaded_tar = 1
-g.loaded_tarPlugin = 1
+-- g.loaded_gzip = 1
+-- g.loaded_zip = 1
+-- g.loaded_zipPlugin = 1
+-- g.loaded_tar = 1
+-- g.loaded_tarPlugin = 1
 
 g.loaded_getscript = 1
 g.loaded_getscriptPlugin = 1
