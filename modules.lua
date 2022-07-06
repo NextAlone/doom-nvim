@@ -84,6 +84,7 @@ return {
     -- "c_sharp",
     "kotlin",
     "java",
+    "go",
 
     "json",
     "yaml",
