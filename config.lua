@@ -15,7 +15,8 @@
 -- })
 doom.use_package("github/copilot.vim", "jspringyc/vim-word", "rmehri01/onenord.nvim", "lervag/vimtex",
   "dhruvasagar/vim-table-mode", "voldikss/vim-translator")
-doom.use_package("rafcamlet/nvim-luapad")
+doom.use_package("rafcamlet/nvim-luapad", "m-pilia/vim-pkgbuild")
+doom.use_package("Shatur/neovim-ayu")
 doom.use_package({
   "ellisonleao/glow.nvim",
   branch = "main",
@@ -82,18 +83,15 @@ vim.g.vimtex_quickfix_mode = 0
 vim.g.vimtex_view_general_viewer = 'zathura'
 vim.g.vimtex_view_method = 'zathura'
 
-vim.g.loaded_gzip = 0
-vim.g.loaded_zip = 0
-vim.g.loaded_zipPlugin = 0
-vim.g.loaded_tar = 0
-vim.g.loaded_tarPlugin = 0
+vim.opt.background = "light"
 
 doom.indent = 2 -- Sets vim.opt.shiftwith, vim.opt.softtabstop, vim.opt.tabstop to 2
-doom.colorscheme = "onenord" -- Select a colorscheme
+doom.colorscheme = "ayu" -- Select a colorscheme
 doom.disable_ex = true -- Disable Ex mode
 doom.disable_macros = true -- Disable macros
 doom.use_floating_win_packer = true -- Use floating window packer
 doom.preserve_edit_pos = true -- Preserve the cursor position when switching buffers
 doom.auto_comment = true -- Enable auto-commenting
 doom.undo_dir = "/home/nextalone/.cache/nvim/undo" -- Set the undo directory
+doom.logging = "fatal"
 -- vim: sw=2 sts=2 ts=2 expandtab
