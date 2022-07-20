@@ -76,7 +76,6 @@ doom.core.treesitter.settings.show_compiler_warning_message = false
 doom.core.reloader.settings.reload_on_save = false
 -- vim.g.copilot_no_tab_map = true
 vim.g.copilot_no_tab_map = true
-vim.opt.colorcolumn = "0"
 
 vim.g.tex_flavor = "xelatex"
 vim.g.vimtex_quickfix_mode = 0
@@ -94,4 +93,5 @@ doom.preserve_edit_pos = true -- Preserve the cursor position when switching buf
 doom.auto_comment = true -- Enable auto-commenting
 doom.undo_dir = "/home/nextalone/.cache/nvim/undo" -- Set the undo directory
 doom.logging = "fatal"
+doom.max_columns = 0
 -- vim: sw=2 sts=2 ts=2 expandtab
