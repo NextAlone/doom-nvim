@@ -40,6 +40,7 @@ doom.use_keybind({
   'copilot#Accept("<CR>")',
   options = { expr = true, silent = true },
 }, {
+  mode = "niv",
   "qq",
   function() vim.cmd("q!") end,
 }, {
