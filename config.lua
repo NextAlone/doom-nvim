@@ -83,6 +83,9 @@ vim.g.vimtex_quickfix_mode = 0
 vim.g.vimtex_view_general_viewer = 'zathura'
 vim.g.vimtex_view_method = 'zathura'
 
+vim.opt.foldtext = 'v:folddashes.substitute(getline(v:foldstart),\'/\\\\*\\\\\\|\\\\*/\\\\\\|{{{\\\\d\\\\=\',\'\',\'g\')'
+
+
 vim.opt.background = "light"
 
 doom.indent = 2 -- Sets vim.opt.shiftwith, vim.opt.softtabstop, vim.opt.tabstop to 2
