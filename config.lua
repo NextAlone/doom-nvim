@@ -37,7 +37,7 @@ doom.use_package({
 doom.use_keybind({
   mode = "i",
   "cc",
-  'copilot#Accept("<CR>")',
+  'copilot#Accept("<LF>")',
   options = { expr = true, silent = true },
 }, {
   mode = "niv",
