@@ -36,10 +36,10 @@ python.settings = {
   disable_diagnostics = false,
   --- Mason.nvim package to auto install the diagnostics provider from
   --- @type string
-  diagnostics_package = "mypy",
+  diagnostics_package = "pylint",
   --- String to access the null_ls diagnositcs provider
   --- @type string
-  diagnostics_provider = "builtins.diagnostics.mypy",
+  diagnostics_provider = "builtins.diagnostics.pylint",
   --- Function to configure null-ls diagnostics
   --- @type function|nil
   diagnostics_config = nil,
