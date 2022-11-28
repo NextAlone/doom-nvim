@@ -14,13 +14,38 @@
 --   end
 -- })
 doom.use_package(
-  "github/copilot.vim",
+  -- "github/copilot.vim",
+  -- "zbirenbaum/copilot.lua",
   "jspringyc/vim-word",
   "rmehri01/onenord.nvim",
   "lervag/vimtex",
   "dhruvasagar/vim-table-mode",
   "voldikss/vim-translator"
 )
+doom.use_package({
+  "zbirenbaum/copilot.lua",
+  config = function()
+    vim.defer_fn(function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,
+          keymap = {
+            accept = "<M-l>",
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
+        },
+      })
+    end, 100)
+  end,
+}, {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function()
+    require("copilot_cmp").setup()
+  end,
+})
 doom.use_package("rafcamlet/nvim-luapad", "m-pilia/vim-pkgbuild")
 doom.use_package("Shatur/neovim-ayu")
 doom.use_package({
@@ -43,8 +68,11 @@ doom.use_package({
 doom.use_keybind({
   mode = "i",
   "cc",
-  'copilot#Accept("<LF>")',
-  options = { expr = true, silent = true },
+  function()
+    require("copilot.suggestion").accept()
+  end,
+  -- 'copilot#Accept("<LF>")',
+  -- options = { expr = true, silent = true },
 }, {
   mode = "niv",
   "qq",
