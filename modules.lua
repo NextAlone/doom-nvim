@@ -22,7 +22,7 @@ return {
     "colorizer", -- Show colors in neovim
     "editorconfig", -- Support editorconfig files
     "gitsigns", -- Show git changes in sidebar
-    "illuminate", -- Highlight other copies of the word you're hovering on
+    -- "illuminate", -- Highlight other copies of the word you're hovering on
     "indentlines", -- Show indent lines with special characters
     "range_highlight", -- Highlight selected range from commands
     "todo_comments", -- Highlight TODO: comments
