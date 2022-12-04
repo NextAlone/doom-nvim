@@ -1,30 +1,61 @@
 local groovy = {}
 
 groovy.settings = {
-  language_server_name = 'groovyls',
+  --- Disables auto installing the treesitter
+  --- @type boolean
+  disable_treesitter = false,
+  --- Treesitter grammars to install
+  --- @type string|string[]
+  treesitter_grammars = "java",
+
+  --- Disables default LSP config
+  --- @type boolean
+  disable_lsp = false,
+  --- Name of the language server
+  --- @type string
+  lsp_name = "jdtls",
+  --- Custom config to pass to nvim-lspconfig
+  --- @type table|nil
+  lsp_config = nil,
+
+  --- Disables null-ls formatting sources
+  --- @type boolean
+  disable_formatting = false,
+  --- WARN: No package. Mason.nvim package to auto install the formatter from
+  --- @type nil
+  formatting_package = nil,
+  --- String to access the null_ls diagnositcs provider
+  --- @type string
+  formatting_provider = "builtins.formatting.google_java_format",
+  --- Function to configure null-ls formatter
+  --- @type function|nil
+  formatting_config = nil,
 }
 
+local langs_utils = require("doom.modules.langs.utils")
 groovy.autocmds = {
   {
     "BufWinEnter",
-    "*.gradle",
-    function()
-      local langs_utils = require('doom.modules.langs.utils')
-      langs_utils.use_lsp(doom.langs.groovy.settings.language_server_name)
-
-      require("nvim-treesitter.install").ensure_installed("java")
-
-      -- Setup null-ls
-      if doom.modules.linter then
-        local null_ls = require("null-ls")
-
-        langs_utils.use_null_ls_source({
-          null_ls.builtins.formatting.google_java_format,
-          null_ls.builtins.diagnostics.semgrep
+    "*.groovy",
+    langs_utils.wrap_language_setup("groovy", function()
+      if not groovy.settings.disable_lsp then
+        langs_utils.use_lsp_mason(groovy.settings.lsp_name, {
+          config = groovy.settings.lsp_config,
         })
       end
 
-    end,
+      if not groovy.settings.disable_treesitter then
+        langs_utils.use_tree_sitter(groovy.settings.treesitter_grammars)
+      end
+
+      if not groovy.settings.disable_formatting then
+        langs_utils.use_null_ls(
+          groovy.settings.diagnostics_package,
+          groovy.settings.formatting_provider,
+          groovy.settings.formatting_config
+        )
+      end
+    end),
     once = true,
   },
 }
