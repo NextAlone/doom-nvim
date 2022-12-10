@@ -77,6 +77,12 @@ doom.use_keybind({
   mode = "niv",
   "qq",
   function()
+    vim.cmd("q")
+  end,
+}, {
+  mode = "niv",
+  "qqq",
+  function()
     vim.cmd("q!")
   end,
 }, {
@@ -85,9 +91,19 @@ doom.use_keybind({
     vim.cmd("wq")
   end,
 }, {
+  "Wq",
+  function()
+    vim.cmd("Wq")
+  end,
+}, {
   "ww",
   function()
     vim.cmd("w")
+  end,
+}, {
+  "WW",
+  function()
+    vim.cmd("W")
   end,
 }, {
   "]<space>",
