@@ -83,7 +83,7 @@ doom.use_keybind({
   mode = "niv",
   "qqq",
   function()
-    vim.cmd("q!")
+    vim.cmd("qall!")
   end,
 }, {
   "wq",
