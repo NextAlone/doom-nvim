@@ -15,7 +15,7 @@ return {
     "comment", -- Adds keybinds to comment in any language
     "linter", -- Linting and formatting for languages
     "lsp", -- Code completion
-    "extra_snippets", -- Code snippets for all languages
+    -- "extra_snippets", -- Code snippets for all languages
 
     -- Editor
     "auto_session", -- Remember sessions between loads
@@ -69,8 +69,8 @@ return {
     -- Web
     "javascript",
     "typescript",
-    -- "css",
-    -- "vue",
+    "css",
+    "vue",
     -- "tailwindcss",
     -- "svelte",
 
@@ -81,7 +81,7 @@ return {
     -- "haskell",
 
     -- JIT
-    -- "c_sharp",
+    "c_sharp",
     "kotlin",
     "java",
     "go",
@@ -92,7 +92,7 @@ return {
     "markdown",
     "terraform", -- Terraform / hcl files support
     "dockerfile",
-    -- "nix",             -- Nix declarations
+    "nix",             -- Nix declarations
 
     -- Custom
     "groovy",
