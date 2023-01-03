@@ -116,6 +116,21 @@ doom.use_keybind({
   function()
     vim.cmd("normal! O")
   end,
+}, {
+  "dor",
+  function()
+    vim.cmd("diffget REMOTE")
+  end,
+}, {
+  "dol",
+  function()
+    vim.cmd("diffget LOCAL")
+  end,
+}, {
+  "dob",
+  function()
+    vim.cmd("diffget BASE")
+  end,
 })
 -- ADDING A COMMAND
 --
