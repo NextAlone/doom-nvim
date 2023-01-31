@@ -52,6 +52,11 @@ doom.use_package({
   "ellisonleao/glow.nvim",
   branch = "main",
 })
+doom.use_package("chrisbra/csv.vim")
+doom.use_package({
+  'sindrets/diffview.nvim',
+  requires = 'nvim-lua/plenary.nvim'
+})
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
