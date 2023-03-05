@@ -54,8 +54,8 @@ doom.use_package({
 })
 doom.use_package("chrisbra/csv.vim")
 doom.use_package({
-  'sindrets/diffview.nvim',
-  requires = 'nvim-lua/plenary.nvim'
+  "sindrets/diffview.nvim",
+  requires = {"nvim-lua/plenary.nvim"},
 })
 -- ADDING A KEYBIND
 --
@@ -167,7 +167,7 @@ doom.use_cmd({
 
 doom.indent = 2
 doom.core.treesitter.settings.show_compiler_warning_message = false
-doom.core.reloader.settings.reload_on_save = false
+doom.core.reloader.settings.reload_on_save = true
 -- vim.g.copilot_no_tab_map = true
 vim.g.copilot_no_tab_map = true
 
@@ -189,6 +189,6 @@ doom.use_floating_win_packer = true -- Use floating window packer
 doom.preserve_edit_pos = true -- Preserve the cursor position when switching buffers
 doom.auto_comment = true -- Enable auto-commenting
 doom.undo_dir = vim.fn.getenv("HOME") .. "/.cache/nvim/undo" -- Set the undo directory
-doom.logging = "info"
+doom.logging = "error"
 doom.max_columns = 0
 -- vim: sw=2 sts=2 ts=2 expandtab
