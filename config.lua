@@ -17,7 +17,6 @@ doom.use_package(
   -- "github/copilot.vim",
   -- "zbirenbaum/copilot.lua",
   "jspringyc/vim-word",
-  "rmehri01/onenord.nvim",
   "lervag/vimtex",
   "dhruvasagar/vim-table-mode",
   "voldikss/vim-translator"
@@ -54,8 +53,10 @@ doom.use_package({
 })
 doom.use_package("chrisbra/csv.vim")
 doom.use_package({
-  "sindrets/diffview.nvim",
-  requires = {"nvim-lua/plenary.nvim"},
+  "akinsho/git-conflict.nvim",
+  config = function()
+    require("git-conflict").setup()
+  end,
 })
 -- ADDING A KEYBIND
 --
