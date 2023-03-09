@@ -82,7 +82,7 @@ gitsigns.binds = {
         name = " Unstage Hunk",
       },
       {
-        "R",
+        "r",
         "<cmd>lua require'gitsigns'.reset_hunk()<CR>",
         name = " Reset Hunk",
       },
