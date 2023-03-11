@@ -13,7 +13,7 @@ markdown.settings = {
   disable_lsp = false,
   --- Name of the language server
   --- @type string
-  lsp_name = "remark_ls",
+  lsp_name = "marksman",
   --- Custom config to pass to nvim-lspconfig
   --- @type table|nil
   lsp_config = nil,
