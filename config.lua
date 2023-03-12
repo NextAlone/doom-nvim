@@ -49,7 +49,8 @@ doom.use_package("rafcamlet/nvim-luapad", "m-pilia/vim-pkgbuild")
 doom.use_package("Shatur/neovim-ayu")
 doom.use_package({
   "ellisonleao/glow.nvim",
-  branch = "main",
+  config = true,
+  cmd = "Glow",
 })
 doom.use_package("chrisbra/csv.vim")
 doom.use_package({
