@@ -18,6 +18,19 @@ markdown.settings = {
   --- @type table|nil
   lsp_config = nil,
 
+  --- Disables null-ls formatting sources
+  --- @type boolean
+  disable_formatting = false,
+  --- Mason.nvim package to auto install the formatter from
+  --- @type string
+  formatting_package = "dprint",
+  --- String to access the null_ls diagnositcs provider
+  --- @type string
+  formatting_provider = "builtins.formatting.dprint",
+  --- Function to configure null-ls formatter
+  --- @type function|nil
+  formatting_config = nil,
+
   --- Disables null-ls diagnostic sources
   --- @type boolean
   disable_diagnostics = false,
@@ -46,6 +59,14 @@ markdown.autocmds = {
 
       if not markdown.settings.disable_treesitter then
         langs_utils.use_tree_sitter(markdown.settings.treesitter_grammars)
+      end
+
+      if not markdown.settings.disable_formatting then
+        langs_utils.use_null_ls(
+          markdown.settings.formatting_package,
+          markdown.settings.formatting_provider,
+          markdown.settings.formatting_config
+        )
       end
 
       if not markdown.settings.disable_diagnostics then
