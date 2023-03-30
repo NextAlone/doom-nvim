@@ -191,6 +191,6 @@ doom.use_floating_win_packer = true -- Use floating window packer
 doom.preserve_edit_pos = true -- Preserve the cursor position when switching buffers
 doom.auto_comment = true -- Enable auto-commenting
 doom.undo_dir = vim.fn.getenv("HOME") .. "/.cache/nvim/undo" -- Set the undo directory
-doom.logging = "error"
+doom.logging = "fatal"
 doom.max_columns = 0
 -- vim: sw=2 sts=2 ts=2 expandtab
