@@ -59,6 +59,9 @@ doom.use_package({
     require("git-conflict").setup()
   end,
 })
+doom.use_package({
+  "Vonr/align.nvim",
+})
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
@@ -92,25 +95,10 @@ doom.use_keybind({
   function()
     vim.cmd("qall!")
   end,
-}, {
-  "wq",
-  function()
-    vim.cmd("wq")
-  end,
-}, {
-  "wqqq",
-  function()
-    vim.cmd("wqall!")
-  end,
-}, {
-  "ww",
-  function()
-    vim.cmd("w")
-  end,
-}, {
+  }, {
   "WW",
   function()
-    vim.cmd("W")
+    vim.cmd("w")
   end,
 }, {
   "]<space>",
@@ -138,6 +126,22 @@ doom.use_keybind({
   function()
     vim.cmd("diffget BASE")
   end,
+}, {
+  mode = "n",
+  "gaa",
+  function()
+    local a = require("align")
+    a.operator(a.align_to_char, { length = 1, reverse = true })
+  end,
+  { noremap = true, silent = true },
+}, {
+  mode = "n",
+  "gaw",
+  function()
+    local a = require("align")
+    a.operator(a.align_to_string, { is_pattern = false, reverse = true, preview = true })
+  end,
+  { noremap = true, silent = true },
 })
 -- ADDING A COMMAND
 --
