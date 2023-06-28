@@ -95,7 +95,7 @@ doom.use_keybind({
   function()
     vim.cmd("qall!")
   end,
-  }, {
+}, {
   "WW",
   function()
     vim.cmd("w")
